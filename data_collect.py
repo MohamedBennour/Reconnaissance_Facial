@@ -5,7 +5,7 @@ video=cv2.VideoCapture(0)
 
 facedetect=cv2.CascadeClassifier("face_detector\haarcascade_frontalface_default.xml")
 
-count=0
+count=500
 
 nameID=str(input("Enter Your Name: ")).lower()
 
@@ -13,11 +13,8 @@ path='dataset/'+nameID
 
 isExist = os.path.exists(path)
 
-if isExist:
-	print("Name Already Taken")
-	nameID=str(input("Enter Your Name Again: "))
-else:
-	os.makedirs(path)
+
+#os.makedirs(path)
 
 while True:
 	ret,frame=video.read()
@@ -31,7 +28,7 @@ while True:
 	cv2.imshow("WindowFrame", frame)
 	
 	k=cv2.waitKey(1)
-	if count >= 500:
+	if count >= 1000:
 
 		break
 video.release()
