@@ -69,8 +69,7 @@ for i in range(detection.shape[2]):
         # tracer un rectangle autour des visages 
         cv2.rectangle(image, (gauche, haut), (droite, bas), couleur, 2)
         # afficher la classe du visage
-        cv2.putText(image, label, (gauche, haut-15), cv2.FONT_HERSHEY_SIMPLEX, 0.45, couleur, 2)
-        
+        cv2.putText(image, label, (gauche, haut-15), cv2.FONT_HERSHEY_SIMPLEX, 0.45, couleur, 2)   
 cv2.imshow("output", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
